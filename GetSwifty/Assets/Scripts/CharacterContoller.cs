@@ -37,7 +37,7 @@ public class CharacterContoller : MonoBehaviour {
         //if the W key is pressed it forces the Ridid body up and removes an extra jump
         if (isGrounded == true)
         {
-            extrajumps = 2;
+            extrajumps = extraJumpValue;
         }
 
         if (Input.GetKeyDown(KeyCode.W) && extrajumps > 0)
