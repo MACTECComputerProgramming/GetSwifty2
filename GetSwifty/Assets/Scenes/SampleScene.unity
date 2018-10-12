@@ -135,7 +135,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 29061215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.75, y: 2, z: 0}
+  m_LocalPosition: {x: 9.26, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17eaf3ea3373250489b7606582c77e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 2
+  runSpeed: 4
   jumpforce: 10
   groundCheck: {fileID: 1063315876}
   checkRadius: 0.5
@@ -651,7 +651,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 714221378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.11, y: 2, z: 0}
+  m_LocalPosition: {x: 6.81, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1476,11 +1476,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2c0937f51341d4bb182fa5b098b106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRunSpeed: 0
+  enemyRb: {fileID: 1839095789}
+  enemyRunSpeed: 1
   Waypoint:
   - {fileID: 714221379}
   - {fileID: 29061216}
-  currentLocation: 0
+  currentLocation: 1
 --- !u!50 &1839095789
 Rigidbody2D:
   serializedVersion: 4
@@ -1500,7 +1501,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1839095790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1572,7 +1573,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.009326458}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1583,7 +1584,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 3}
+  m_Size: {x: 0.5, y: 5.1136503}
   m_EdgeRadius: 0
 --- !u!1 &1990784513
 GameObject:

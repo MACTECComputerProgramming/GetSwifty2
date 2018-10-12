@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour {
 
     //Movement
-    private Rigidbody2D enemyRb;
+    public Rigidbody2D enemyRb;
     NavMeshAgent nm;
     public float enemyRunSpeed;
     public Transform[] Waypoint;
@@ -14,7 +14,7 @@ public class EnemyAI : MonoBehaviour {
     //Orientation
     private bool facingRight;
 
-    //Vector3(0, 0, 0);
+    
     
 
 
@@ -30,38 +30,65 @@ public class EnemyAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
+        
 
-        float distance = Vector2.Distance(transform.position, Waypoint[currentLocation].position);
-        //Changing waypoints
-        //Going to the waypoints
+    }
+
+
+    void FixedUpdate()
+    {
         if (currentLocation == 0)
         {
-            
-        }
-        if (currentLocation == 1)
-        {
-            
-        }
-
-        if (distance <= 0.1)
-        {
-            if (currentLocation == 0)
+            if (transform.position.x <= Waypoint[currentLocation].position.x)
             {
                 currentLocation += 1;
             }
-            else
+        }
+
+        if (currentLocation == 1)
+        {
+            if (transform.position.x >= Waypoint[currentLocation].position.x)
             {
                 currentLocation -= 1;
             }
         }
 
-     /*   if (enemyRb.position != Waypoint[currentLocation].position)
-        {
-
-        }
-        */
 
 
 
+
+        //float horizontal = Input.GetAxis("Horizontal");
+
+        Movement();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    private void Movement()
+    {
+        if (currentLocation == 0)
+        {
+            enemyRb.velocity = new Vector2(-(enemyRunSpeed), enemyRb.velocity.y);
+        }
+        else
+        {
+            enemyRb.velocity = new Vector2(enemyRunSpeed, enemyRb.velocity.y);
+        }
+        //enemyRb.velocity = new Vector2(horizontal * enemyRunSpeed, enemyRb.velocity.y);
+    }
+
+
+
+
+
 }
