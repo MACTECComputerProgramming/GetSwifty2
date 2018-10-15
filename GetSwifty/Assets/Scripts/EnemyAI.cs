@@ -1,30 +1,18 @@
 ﻿using UnityEngine;
-using UnityEngine.AI;
+
 
 public class EnemyAI : MonoBehaviour {
 
     //Movement
     public Rigidbody2D enemyRb;
-    NavMeshAgent nm;
     public float enemyRunSpeed;
     public Transform[] Waypoint;
     public int currentLocation;
    
     
-    //Orientation
-    private bool facingRight;
-
-    
-    
-
-
-
 	// Use this for initialization
 	void Start () {
-        
         enemyRb = GetComponent<Rigidbody2D>();
-        
-        facingRight = true;
         currentLocation = 0;
 	}
 
