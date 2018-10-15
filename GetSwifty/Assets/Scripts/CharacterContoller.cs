@@ -51,7 +51,8 @@ public class CharacterContoller : MonoBehaviour {
         }
      }
     //------------------------------------------------------------------
-        void FixedUpdate () {
+    void FixedUpdate ()
+    {
         //Get A & D or leftright arrow buttons (A=-1, D=1)
        float horizontal = Input.GetAxis("Horizontal");
 
@@ -60,14 +61,14 @@ public class CharacterContoller : MonoBehaviour {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
 	}
     //---------------------------------------------------------
-       private void HandleMovement(float horizontal)
+    private void HandleMovement(float horizontal)
     {
         //Multiply 1 or -1 by the adjustible runspeed
         rBody.velocity = new Vector2(horizontal * runSpeed, rBody.velocity.y);
 
 
          Flip(horizontal);
-           }
+    }
     //----------------------------------------------------
 //Fliping the Sprite on x axis
     private void Flip(float horizontal)

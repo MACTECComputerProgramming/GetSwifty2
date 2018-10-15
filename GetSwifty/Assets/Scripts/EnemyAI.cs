@@ -27,13 +27,15 @@ public class EnemyAI : MonoBehaviour {
         facingRight = true;
         currentLocation = 0;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        
-        
 
+    void Update()
+    {
+        if (transform.position.y <= -150)
+        {
+            Destroy(gameObject);
+        }
     }
+
 
 
     void FixedUpdate()
@@ -54,13 +56,9 @@ public class EnemyAI : MonoBehaviour {
             }
         }
 
-
-
-
-
-        //float horizontal = Input.GetAxis("Horizontal");
-
         Movement();
+        Flip();
+
     }
 
 
@@ -84,8 +82,38 @@ public class EnemyAI : MonoBehaviour {
         {
             enemyRb.velocity = new Vector2(enemyRunSpeed, enemyRb.velocity.y);
         }
-        //enemyRb.velocity = new Vector2(horizontal * enemyRunSpeed, enemyRb.velocity.y);
     }
+
+
+    private void Flip()
+    {
+
+        if (currentLocation == 0 && transform.localScale.x > 0)
+        {
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        }
+        if (currentLocation == 1 && transform.localScale.x < 0)
+        {
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+
+        }
+
+
+
+
+
+
+
+
+    }
+
+
+
+
 
 
 
