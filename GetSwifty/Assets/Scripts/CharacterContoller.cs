@@ -65,16 +65,12 @@ public class CharacterContoller : MonoBehaviour {
     {
         //Multiply 1 or -1 by the adjustible runspeed
         rBody.velocity = new Vector2(horizontal * runSpeed, rBody.velocity.y);
-
-
          Flip(horizontal);
     }
     //----------------------------------------------------
 //Fliping the Sprite on x axis
     private void Flip(float horizontal)
     {
-          Vector3 v3 = new Vector3();
-
         if(horizontal > 0 && !facingRight || horizontal < 0 && facingRight)
         {
             facingRight = !facingRight;

@@ -66,7 +66,6 @@
     <Compile Include="Assets\Scripts\CharacterContoller.cs" />
     <Compile Include="Assets\Scripts\CharacterHealth.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
-    <Compile Include="Assets\Scripts\moving.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/CS180/Desktop/GitHubRepoGS/GetSwifty2/GetSwifty/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
