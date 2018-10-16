@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114930474198158560}
   m_Layer: 0
   m_Name: flexSeal_Spray
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 10
   rBody: {fileID: 50049485760641358}
-  damage: 10
   Bullet: {fileID: 1756797810677870}
 --- !u!212 &212834923082988292
 SpriteRenderer:

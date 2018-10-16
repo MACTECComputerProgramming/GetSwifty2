@@ -7,7 +7,6 @@ public class BulletBehavior : MonoBehaviour {
 
     public float bulletSpeed;
     public Rigidbody2D rBody;
-    public int damage = 10;
     public GameObject Bullet;
     
     
