@@ -22,9 +22,13 @@ public class CharacterHealth : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(Damage());
+        if (collision.gameObject.tag == "Enemy")
+        {
+            StartCoroutine(Damage());
+        }
         
-
+        
+    
     }
     void OnTriggerExit(Collider other)
     {

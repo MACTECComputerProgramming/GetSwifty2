@@ -22,6 +22,10 @@ public class EnemyAI : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
+
+
+
     }
 
 
@@ -49,26 +53,20 @@ public class EnemyAI : MonoBehaviour {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
+    
     private void Movement()
     {
         if (currentLocation == 0)
         {
-            enemyRb.velocity = new Vector2(-(enemyRunSpeed), enemyRb.velocity.y);
+            enemyRb.velocity = new Vector2(-2 * (enemyRunSpeed), enemyRb.velocity.y);
+        }
+        else if(currentLocation == 1)
+        {
+            enemyRb.velocity = new Vector2(2 * enemyRunSpeed, enemyRb.velocity.y);
         }
         else
         {
-            enemyRb.velocity = new Vector2(enemyRunSpeed, enemyRb.velocity.y);
+            Destroy(gameObject);
         }
     }
 
