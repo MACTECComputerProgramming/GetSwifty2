@@ -6,6 +6,10 @@ public class AnimationControl : MonoBehaviour {
 
     public Sprite jumpSprite;
     public Sprite restSprite;
+    public Sprite runSprite1;
+    public Sprite runSprite2;
+
+
     private bool isGrounded;
     public Transform groundCheck;
     public LayerMask whatIsGround;
