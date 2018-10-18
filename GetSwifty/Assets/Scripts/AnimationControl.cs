@@ -23,14 +23,46 @@ public class AnimationControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        ChangeSprite();
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+    }
+
+
+
+
+
+    public void ChangeSprite()
+    {
         if (isGrounded)
         {
-            sr.sprite = restSprite;
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+            {
+                if (sr.sprite == runSprite1)
+                {
+                    sr.sprite = runSprite2;
+                }
+                else
+                {
+                    sr.sprite = runSprite1;
+                }
+            }
+            else
+            {
+                sr.sprite = restSprite;
+            }
         }
-        if (!isGrounded)
+        else if (!isGrounded)
         {
             sr.sprite = jumpSprite;
         }
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+        else
+        {
+            sr.sprite = jumpSprite;
+        }
     }
+
+
+
+
+
 }
