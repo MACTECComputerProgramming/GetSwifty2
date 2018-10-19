@@ -16,7 +16,7 @@ public class CameraFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void LateUpdate () {
-        offset.Set(player.transform.position.x, 0, transform.position.z - player.transform.position.z);
+        offset.Set(player.transform.position.x, 1, transform.position.z - player.transform.position.z);
         transform.position = offset;
 	}
 }

@@ -1,65 +1,116 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+
 
 public class AnimationControl : MonoBehaviour {
 
-    public Sprite jumpSprite;
-    public Sprite restSprite;
-    public Sprite runSprite1;
-    public Sprite runSprite2;
+    public GameObject AnimatedGameObject;
+    public Sprite[] AnimationSets;
+    public int Cur_SpriteID;
+    private float SecsPerFrame = 0.1f;
 
-
-    private bool isGrounded;
+    public bool isGrounded;
     public Transform groundCheck;
     public LayerMask whatIsGround;
     public float checkRadius;
     private SpriteRenderer sr;
 
-    // Use this for initialization
-    void Start () {
-        sr = GetComponent<SpriteRenderer>();
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-        ChangeSprite();
+
+    void Start()
+    {
+        Cur_SpriteID = 0;
+        if (!AnimatedGameObject)
+        {
+            AnimatedGameObject = this.gameObject;
+        }
+    }
+
+    void FixedUpdate()
+    {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+        PlayAnimation(SecsPerFrame);
+        
     }
 
 
 
 
 
-    public void ChangeSprite()
+
+
+
+
+    public void PlayAnimation(float secPerFrame)
     {
-        if (isGrounded)
+        SecsPerFrame = secPerFrame;
+        StopCoroutine("AnimateSprite");
+
+        StartCoroutine("AnimateSprite", isGrounded);
+        
+    }
+
+
+
+
+
+
+
+
+
+
+    IEnumerator AnimateSprite(bool grounded)
+    {
+        
+        if (grounded)
         {
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
-                if (sr.sprite == runSprite1)
+                switch (Cur_SpriteID)
                 {
-                    sr.sprite = runSprite2;
-                }
-                else
-                {
-                    sr.sprite = runSprite1;
+                    case 0:
+                        Cur_SpriteID = 2;
+                        AnimatedGameObject.GetComponent<SpriteRenderer>().sprite = AnimationSets[2]; break;
+
+                    case 1:
+                        Cur_SpriteID = 2;
+                        AnimatedGameObject.GetComponent<SpriteRenderer>().sprite = AnimationSets[2]; break;
+                    case 2:
+                        yield return new WaitForSeconds(SecsPerFrame);
+                        Cur_SpriteID = 3;
+                        AnimatedGameObject.GetComponent<SpriteRenderer>().sprite = AnimationSets[3]; break;
+
+                    case 3:
+                        yield return new WaitForSeconds(SecsPerFrame);
+                        Cur_SpriteID = 2;
+                        AnimatedGameObject.GetComponent<SpriteRenderer>().sprite = AnimationSets[2]; break;
+                    
+                    //default:
+                      //  yield return new WaitForSeconds(SecsPerFrame);
+                        //Cur_SpriteID = 2;
+                        //AnimatedGameObject.GetComponent<SpriteRenderer>().sprite = AnimationSets[2]; break;
                 }
             }
             else
             {
-                sr.sprite = restSprite;
+                AnimatedGameObject.GetComponent<SpriteRenderer>().sprite = AnimationSets[0];
+                Cur_SpriteID = 0;
             }
-        }
-        else if (!isGrounded)
-        {
-            sr.sprite = jumpSprite;
         }
         else
         {
-            sr.sprite = jumpSprite;
+            AnimatedGameObject.GetComponent<SpriteRenderer>().sprite = AnimationSets[1];
+            Cur_SpriteID = 1;
         }
     }
+
+
+
+
+
+
 
 
 
