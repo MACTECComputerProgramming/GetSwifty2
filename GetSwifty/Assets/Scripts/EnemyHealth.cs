@@ -17,6 +17,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if(enemyHealth <= 0){
             Destroy(gameObject);
+            ScoreScript.scoreValue += 50;
         }
     }
 
@@ -24,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (col.gameObject.tag.Equals("Bullet"))
         {
+            
             enemyHealth -= 25;
         }
     }
