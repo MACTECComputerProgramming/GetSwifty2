@@ -37,7 +37,7 @@ public class CharacterHealth : MonoBehaviour {
     }
     void OnTriggerExit(Collider other)
     {
-        StopCoroutine(Damage());
+        
     }
 
     IEnumerator Damage()
@@ -45,11 +45,11 @@ public class CharacterHealth : MonoBehaviour {
         playerHealthCurrent -= 25;
         healthBar.value = CalculateHealth();
         yield return new WaitForSeconds(2);
-
+        StopCoroutine(Damage());
     }
     float CalculateHealth()
     {
-        return playerHealthCurrent / playerHealthMax;
+        return playerHealthCurrent;
     }
 
 }
