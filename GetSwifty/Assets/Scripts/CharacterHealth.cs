@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterHealth : MonoBehaviour {
 
@@ -14,14 +15,20 @@ public class CharacterHealth : MonoBehaviour {
         
         
     }
-	
-	// Update is called once per frame
-	void Update() {
+
+
+
+    // Update is called once per frame
+    void Update() {
         
 
         if (playerHealthCurrent <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene(3);
+        }
+        if (transform.position.y < -20)
+        {
+            SceneManager.LoadScene(3);
         }
 	}
 
@@ -32,8 +39,11 @@ public class CharacterHealth : MonoBehaviour {
             StartCoroutine(Damage());
             
         }
-        
-       
+        if (collision.gameObject.tag.Equals("Flag"))
+        {
+            SceneManager.LoadScene(2);
+        }
+
     }
     void OnTriggerExit(Collider other)
     {
