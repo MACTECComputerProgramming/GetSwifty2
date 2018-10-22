@@ -9,7 +9,10 @@ public class CharacterHealth : MonoBehaviour {
     public int playerHealthMax;
     public int playerHealthCurrent;
     public Slider healthBar;
-    
+    public Scene winScene;
+    public Scene loseScene;
+
+
 	
 	void Start () {
         
@@ -24,11 +27,11 @@ public class CharacterHealth : MonoBehaviour {
 
         if (playerHealthCurrent <= 0)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
         }
         if (transform.position.y < -20)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
         }
 	}
 
@@ -41,7 +44,7 @@ public class CharacterHealth : MonoBehaviour {
         }
         if (collision.gameObject.tag.Equals("Flag"))
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
 
     }
