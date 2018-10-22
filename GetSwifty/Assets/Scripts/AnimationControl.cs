@@ -2,34 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Timeline;
 
 
 public class AnimationControl : MonoBehaviour {
 
-    public GameObject AnimatedGameObject;
-    public Sprite[] AnimationSets;
-    public int Cur_SpriteID;
-    private float SecsPerFrame = 0.1f;
-
-    public bool isGrounded;
-    public Transform groundCheck;
-    public LayerMask whatIsGround;
-    public float checkRadius;
-    private SpriteRenderer sr;
+    public GameObject AnimatedGameObject; //Object being animated
+    public Sprite[] AnimationSets; //All the sprites of the animation
+    public int Cur_SpriteID; //Helps iterate through the sprites
+    private float SecsPerFrame = 1f; //How long between running frames
+    public bool isGrounded; //Value to detect whether the player is on the ground
+    public Transform groundCheck; //Empty object detecting layered ground
+    public LayerMask whatIsGround; //Layer that is considered ground
+    public float checkRadius; //
+    private SpriteRenderer sr; //Renderer that gets adjusted
 
 
     void Start()
     {
+        //Sets the current sprite to zero and detects the gameobject
         Cur_SpriteID = 0;
-        if (!AnimatedGameObject)
-        {
-            AnimatedGameObject = this.gameObject;
-        }
+        AnimatedGameObject = this.gameObject;
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
     {
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         PlayAnimation(SecsPerFrame);
         
@@ -37,28 +36,20 @@ public class AnimationControl : MonoBehaviour {
 
 
 
-
-
-
-
-
+    
 
     public void PlayAnimation(float secPerFrame)
     {
-        SecsPerFrame = secPerFrame;
-        StopCoroutine("AnimateSprite");
+        
+        
 
         StartCoroutine("AnimateSprite", isGrounded);
         
     }
 
 
-
-
-
-
-
-
+    void on
+    
 
 
     IEnumerator AnimateSprite(bool grounded)
@@ -72,37 +63,49 @@ public class AnimationControl : MonoBehaviour {
                 {
                     case 0:
                         Cur_SpriteID = 2;
-                        AnimatedGameObject.GetComponent<SpriteRenderer>().sprite = AnimationSets[2]; break;
-
+                        sr.sprite = AnimationSets[2];
+                        yield return new WaitForSeconds(SecsPerFrame);
+                        StopCoroutine("AnimateSprite");
+                        break;
                     case 1:
                         Cur_SpriteID = 2;
-                        AnimatedGameObject.GetComponent<SpriteRenderer>().sprite = AnimationSets[2]; break;
-                    case 2:
+                        sr.sprite = AnimationSets[2];
                         yield return new WaitForSeconds(SecsPerFrame);
+                        StopCoroutine("AnimateSprite");
+                        break;
+                    case 2:
                         Cur_SpriteID = 3;
-                        AnimatedGameObject.GetComponent<SpriteRenderer>().sprite = AnimationSets[3]; break;
+                        sr.sprite = AnimationSets[3];
+                        yield return new WaitForSeconds(SecsPerFrame);
+                        StopCoroutine("AnimateSprite");
+                        break;
 
                     case 3:
-                        yield return new WaitForSeconds(SecsPerFrame);
                         Cur_SpriteID = 2;
-                        AnimatedGameObject.GetComponent<SpriteRenderer>().sprite = AnimationSets[2]; break;
-                    
-                    //default:
-                      //  yield return new WaitForSeconds(SecsPerFrame);
-                        //Cur_SpriteID = 2;
-                        //AnimatedGameObject.GetComponent<SpriteRenderer>().sprite = AnimationSets[2]; break;
+                        sr.sprite = AnimationSets[2];
+                        yield return new WaitForSeconds(SecsPerFrame);
+                        StopCoroutine("AnimateSprite");
+                        break;
+                    default:
+                        yield return new WaitForSeconds(SecsPerFrame);
+                        Cur_SpriteID = 0;
+                        sr.sprite = AnimationSets[0];
+                        StopCoroutine("AnimateSprite");
+                        break;
                 }
             }
             else
             {
-                AnimatedGameObject.GetComponent<SpriteRenderer>().sprite = AnimationSets[0];
+                sr.sprite = AnimationSets[0];
                 Cur_SpriteID = 0;
+                StopCoroutine("AnimateSprite");
             }
         }
         else
         {
-            AnimatedGameObject.GetComponent<SpriteRenderer>().sprite = AnimationSets[1];
+            sr.sprite = AnimationSets[1];
             Cur_SpriteID = 1;
+            StopCoroutine("AnimateSprite");
         }
     }
 
