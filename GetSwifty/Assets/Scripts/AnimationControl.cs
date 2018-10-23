@@ -48,7 +48,7 @@ public class AnimationControl : MonoBehaviour {
     }
 
 
-    void on
+    
     
 
 
