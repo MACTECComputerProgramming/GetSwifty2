@@ -3,33 +3,29 @@
 
 public class EnemyAI : MonoBehaviour {
 
-    //Movement
-    public Rigidbody2D enemyRb;
-    public float enemyRunSpeed;
-    public Transform[] Waypoint;
-    public int currentLocation;
-   
     
-	// Use this for initialization
-	void Start () {
+    public Rigidbody2D enemyRb; //Enemy rigidbody to be manipulated
+    public float enemyRunSpeed; //Enemy's runspeed (force to be added to rigidbody)
+    public Transform[] Waypoint; //Group of empties to be used as waypoints
+    public int currentLocation; //Index of current waypoint
+   
+	//Detects current rigidbody and sets the current location to zero
+	void Start ()
+    {
         enemyRb = GetComponent<Rigidbody2D>();
         currentLocation = 0;
 	}
 
+    //Detects every frame if the enemy is below the platform and destroys if true
     void Update()
     {
-        if (transform.position.y <= -150)
+        if (transform.position.y <= -20)
         {
             Destroy(gameObject);
         }
-
-
-
-
     }
 
-
-
+    //Detects the current location and switches if the empty has been passed
     void FixedUpdate()
     {
         if (currentLocation == 0)
@@ -48,12 +44,12 @@ public class EnemyAI : MonoBehaviour {
             }
         }
 
+        //Calles the movement and flip methods
         Movement();
         Flip();
-
     }
 
-    
+    //Adds force to the enemy rigidbody to move it to the current waypoint
     private void Movement()
     {
         if (currentLocation == 0)
@@ -70,7 +66,7 @@ public class EnemyAI : MonoBehaviour {
         }
     }
 
-
+    //Flips the enemy if needed
     private void Flip()
     {
 
@@ -85,16 +81,7 @@ public class EnemyAI : MonoBehaviour {
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
-
         }
-
-
-
-
-
-
-
-
     }
 
 

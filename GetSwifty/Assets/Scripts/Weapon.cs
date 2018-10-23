@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
-    public Transform firePoint;
-    public GameObject flexSeal_Spray;
+    public Transform firePoint; //Origin of bullets on the sprite, uses an empty
+    public GameObject flexSeal_Spray; //Bullet being fired
 	
-	// Update is called once per frame
-	void Update () {
+	//Detects every frame if the spacebar is pressed and then calls the shoot method
+	void Update ()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
         }
-}
-        void Shoot(){
-            Instantiate(flexSeal_Spray, firePoint.position, firePoint.rotation);
-        }
+    }
+
+    //Method creates a bullet at the point indicated and sets its position and rotation
+    void Shoot()
+    {
+        Instantiate(flexSeal_Spray, firePoint.position, firePoint.rotation);
+    }
 	
 }

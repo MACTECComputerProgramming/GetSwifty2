@@ -4,22 +4,13 @@ using UnityEngine;
 
 public class Colectible : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    //When triggered checks the collider for the player tag and if true adds ten to the score and destroys itself
     void OnTriggerEnter2D(Collider2D col)
     {
-        
-       if(col.gameObject.tag.Equals("Player")){
-           ScoreScript.scoreValue += 10;
-           Destroy(gameObject);
-       }
+        if (col.gameObject.tag.Equals("Player"))
+        {
+            ScoreScript.scoreValue += 10;
+            Destroy(gameObject);
+        }
     }
-
 }

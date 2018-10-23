@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour {
 
-    public static int scoreValue;
-    Text score;
+    public static int scoreValue; //Static score that gets changed by other classes
+    Text score; //Gui text that will be displayed for the player
 
-	// Use this for initialization
-	void Start () {
+	//Sets the Gui text to the editor component
+	void Start ()
+    {
         score = GetComponent<Text>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	//Updates the text of the Gui every frame
+	void Update ()
+    {
         score.text = "Score: " + scoreValue;
 	}
 }

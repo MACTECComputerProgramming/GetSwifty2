@@ -5,41 +5,41 @@ using UnityEngine;
 public class CharacterContoller : MonoBehaviour {
 
     //running
-    private Rigidbody2D rBody;
-    public float runSpeed;
+    private Rigidbody2D rBody; //Player's rigidbody
+    public float runSpeed; //Player's runspeed
     //flipping
-    private bool facingRight;
+    private bool facingRight; //The player's rotation
 
     //Jumping
-    public float jumpforce;
-    private bool isGrounded;
-    public Transform groundCheck;
-    public float checkRadius;
-    public LayerMask whatIsGround;
-    private int extrajumps;
-    public int extraJumpValue;
+    public float jumpforce; //Force of the player's jump
+    private bool isGrounded; //Bool storing if the player's grounded
+    public Transform groundCheck; //Empty placed at player's feet to detect if grounded
+    public float checkRadius; //Used to detect if grounded
+    public LayerMask whatIsGround; //Layer to ask what ground is
+    private int extrajumps; //Amount of jumps the player has
+    public int extraJumpValue; //Amount of jumps the player has
 
     /*Credit to:
      --- Blackthorneprod
-     */
+    */
 
-	// Use this for initialization
-	void Start () {
+	//sets extra jumps, sets the bool that faces right, and finds the player's rigidbody
+	void Start ()
+    {
         extrajumps = extraJumpValue;
 
         facingRight = true;
         rBody = GetComponent<Rigidbody2D>();
 	}
-	//------------------------------------------------------------------------------------------
-	// Update is called once per frame
-	void Update () {
-        //Remember to make to parent 
-        //if the W key is pressed it forces the Ridid body up and removes an extra jump
+	
+
+    //Every frame checks if grounded and adds jumps back if true plus removes them and adds force if w is pressed
+	void Update ()
+    {
         if (isGrounded == true)
         {
             extrajumps = extraJumpValue;
         }
-
         if (Input.GetKeyDown(KeyCode.W) && extrajumps > 0)
         {
             rBody.velocity = Vector2.up * jumpforce;
@@ -50,25 +50,30 @@ public class CharacterContoller : MonoBehaviour {
             rBody.velocity = Vector2.up * jumpforce;
         }
      }
-    //------------------------------------------------------------------
+    
+
+    //Every frame gets the horizontal face and uses it to move and checks if the player is grounded
     void FixedUpdate ()
     {
         //Get A & D or leftright arrow buttons (A=-1, D=1)
-       float horizontal = Input.GetAxis("Horizontal");
+        float horizontal = Input.GetAxis("Horizontal");
 
         HandleMovement(horizontal);
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
 	}
-    //---------------------------------------------------------
+
+
+    //Method that adds force to the player's rigidbody and flips
     private void HandleMovement(float horizontal)
     {
         //Multiply 1 or -1 by the adjustible runspeed
         rBody.velocity = new Vector2(horizontal * runSpeed, rBody.velocity.y);
-         Flip(horizontal);
+        Flip(horizontal);
     }
-    //----------------------------------------------------
-//Fliping the Sprite on x axis
+    
+        
+    //Fliping the Sprite on x axis when needed
     private void Flip(float horizontal)
     {
         if(horizontal > 0 && !facingRight || horizontal < 0 && facingRight)
@@ -78,8 +83,8 @@ public class CharacterContoller : MonoBehaviour {
 
             transform.Rotate(0f, 180f, 0f);
         }
-       }
-     }
+    }
+}
     
 
 

@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int enemyHealth;
-   
-    // Use this for initialization
-    void Start()
-    {
+    public int enemyHealth; //Value of enemy's health
 
-    }
-
-    // Update is called once per frame
+    //Checks every frame if the enemy's health is at or below 0 and destroys if it is
     void Update()
     {
-        if(enemyHealth <= 0){
+        if(enemyHealth <= 0)
+        {
             Destroy(gameObject);
             ScoreScript.scoreValue += 50;
         }
     }
-
+    
+    //When triggered checks if the collider's tag is bullet and if true then takes off some health
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag.Equals("Bullet"))
