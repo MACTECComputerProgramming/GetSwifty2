@@ -28,10 +28,12 @@ public class CharacterHealth : MonoBehaviour {
         if (playerHealthCurrent <= 0)
         {
             SceneManager.LoadScene(4);
+            ScoreScript.scoreValue = 0;
         }
         if (transform.position.y < -20)
         {
             SceneManager.LoadScene(4);
+            ScoreScript.scoreValue = 0;
         }
 	}
 
@@ -45,6 +47,7 @@ public class CharacterHealth : MonoBehaviour {
         if (collision.gameObject.tag.Equals("Flag"))
         {
             SceneManager.LoadScene(3);
+            ScoreScript.scoreValue = 0;
         }
 
     }
