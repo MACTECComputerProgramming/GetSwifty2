@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Pausing.cs" />
     <Compile Include="Assets\Scripts\ScoreScript.cs" />
+    <Compile Include="Assets\Scripts\Sounds.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/CS180/Desktop/GitHubRepoGS/GetSwifty2/GetSwifty/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
