@@ -22,9 +22,9 @@ public class BulletBehavior : MonoBehaviour {
     {
         Destroy(Bullet, .25f);
     }
-    
+    //Kyler was here
     //Destroys the bullet when it hits an enemy collider
-	void OnTriggerEnter2D(Collider2D hitInfo)
+    void OnTriggerEnter2D(Collider2D hitInfo)
     {
         if (hitInfo.gameObject.tag.Equals("Enemy"))
         {

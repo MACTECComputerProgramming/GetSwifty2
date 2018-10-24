@@ -12,9 +12,9 @@ public class BulletBehave_Enemy : MonoBehaviour {
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
+    //Kyler was here
+    // Update is called once per frame
+    void Update () {
         Destroy(Bullet, 5f);
 	}
     void OnTriggerEnter2D(Collider2D hitInfo)

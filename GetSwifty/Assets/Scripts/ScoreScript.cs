@@ -13,9 +13,9 @@ public class ScoreScript : MonoBehaviour {
     {
         score = GetComponent<Text>();
 	}
-	
-	//Updates the text of the Gui every frame
-	void Update ()
+    //Kyler was here
+    //Updates the text of the Gui every frame
+    void Update ()
     {
         score.text = "Score: " + scoreValue;
 	}

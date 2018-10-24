@@ -14,9 +14,9 @@ public class FlyingEnemyBehave : MonoBehaviour {
 	void Start () {
         player = FindObjectOfType<CharacterContoller>();
 	}
-	
-	// Update is called once per frame
-	void Update () 
+    //Kyler was here
+    // Update is called once per frame
+    void Update () 
     {
         playerInRange = Physics2D.OverlapCircle(transform.position, playerRange, playerLayer);
         if (playerInRange)
