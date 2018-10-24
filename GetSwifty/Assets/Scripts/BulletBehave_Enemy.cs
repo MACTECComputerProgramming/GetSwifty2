@@ -7,6 +7,7 @@ public class BulletBehave_Enemy : MonoBehaviour {
     
     public Rigidbody2D rBody;
     public GameObject Bullet;
+    public int destroyOverTime;
 
 	// Use this for initialization
 	void Start () {
@@ -15,10 +16,14 @@ public class BulletBehave_Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Destroy(Bullet, 5f);
+        Destroy(Bullet, destroyOverTime);
 	}
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
+
+
+        if( !(hitInfo.gameObject.tag.Equals("Enemy")) ){
         Destroy(gameObject);
+        }
     }
 }

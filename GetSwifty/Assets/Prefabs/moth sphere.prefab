@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114817120457375040}
   m_Layer: 0
   m_Name: moth sphere
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rBody: {fileID: 50420096145756996}
   Bullet: {fileID: 1953199782159670}
+  destroyOverTime: 1
 --- !u!212 &212203944288330344
 SpriteRenderer:
   m_ObjectHideFlags: 1

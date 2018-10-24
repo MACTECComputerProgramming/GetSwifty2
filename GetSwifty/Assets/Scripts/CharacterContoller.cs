@@ -31,10 +31,10 @@ public class CharacterContoller : MonoBehaviour {
         facingRight = true;
         rBody = GetComponent<Rigidbody2D>();
 	}
-	
+    //Kyler was here
 
     //Every frame checks if grounded and adds jumps back if true plus removes them and adds force if w is pressed
-	void Update ()
+    void Update ()
     {
         if (isGrounded == true)
         {

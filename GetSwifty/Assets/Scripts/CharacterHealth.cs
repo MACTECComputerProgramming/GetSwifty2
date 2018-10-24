@@ -40,6 +40,7 @@ public class CharacterHealth : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        //Kyler was here
         if (collision.gameObject.tag == "Enemy")
         {
             StartCoroutine(Damage());
