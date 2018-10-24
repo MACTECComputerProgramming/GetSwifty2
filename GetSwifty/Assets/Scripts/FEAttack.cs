@@ -31,6 +31,11 @@ public class FEAttack : MonoBehaviour {
             shotCounter = waitBetweenShots;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        //Kyler was here
+    }
+>>>>>>> a985859b094f6c06d70b782666ed1f90ce50d0f1
 
         if (/*transform.localScale.y > 0 &&*/ transform.position.x == player.transform.position.x && shotCounter < 0)
         {
