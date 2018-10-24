@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour {
             Shoot();
         }
     }
-
+    //Kyler was here
     //Method creates a bullet at the point indicated and sets its position and rotation
     void Shoot()
     {

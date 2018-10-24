@@ -42,7 +42,7 @@ public class AnimationControl : MonoBehaviour {
         }
 
         an.SetFloat("Speed", rb.velocity.x);
-       
+       //Kyler was here
     }
 
 

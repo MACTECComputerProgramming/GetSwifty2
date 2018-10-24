@@ -13,10 +13,10 @@ public class CameraFollow : MonoBehaviour {
 	void Start () {
         offset = transform.position - player.transform.position;
 	}
-	
 
-	//Resets the camera's location variable and sets its location to the new variable
-	void LateUpdate () {
+    //Kyler was here
+    //Resets the camera's location variable and sets its location to the new variable
+    void LateUpdate () {
         offset.Set(player.transform.position.x, 1, transform.position.z - player.transform.position.z);
         transform.position = offset;
 	}
