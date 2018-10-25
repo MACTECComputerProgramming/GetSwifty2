@@ -7,6 +7,7 @@ public class Sounds : MonoBehaviour {
 
     public AudioClip jump;
     public AudioClip hurt;
+    public AudioClip banana;
     private AudioSource source;
 
 
@@ -29,6 +30,10 @@ public class Sounds : MonoBehaviour {
         if (other.gameObject.tag == "Enemy")
         {
             source.PlayOneShot(hurt);
+        }
+        if (other.gameObject.tag == "Banana")
+        {
+            source.PlayOneShot(banana);
         }
     }
 

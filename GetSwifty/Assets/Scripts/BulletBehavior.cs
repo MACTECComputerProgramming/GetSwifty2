@@ -11,9 +11,12 @@ public class BulletBehavior : MonoBehaviour {
     //Actual bullet object being created and destroyed
     public GameObject Bullet;
 
+    private CharacterContoller player;
+
 
 	//Called when the bullet is created, adds a force to the bullet
 	void Start () {
+        
         rBody.velocity = transform.right * bulletSpeed; 
 	}
     
