@@ -6,7 +6,9 @@ using UnityEngine.Audio;
 public class Sounds : MonoBehaviour {
 
     public AudioClip jump;
+    public AudioClip hurt;
     private AudioSource source;
+
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +22,16 @@ public class Sounds : MonoBehaviour {
             source.PlayOneShot(jump);
         }
 
-
 	}
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            source.PlayOneShot(hurt);
+        }
+    }
+
+
+
 }

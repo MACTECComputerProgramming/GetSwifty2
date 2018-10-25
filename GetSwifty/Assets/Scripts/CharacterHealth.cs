@@ -12,7 +12,7 @@ public class CharacterHealth : MonoBehaviour {
     public Slider healthBar;
     public Scene winScene;
     public Scene loseScene;
-
+    
 
 	
 	void Start () {
@@ -22,7 +22,7 @@ public class CharacterHealth : MonoBehaviour {
 
 
 
-    // Update is called once per frame
+    
     void Update() {
         
 
@@ -40,7 +40,6 @@ public class CharacterHealth : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //Kyler was here
         if (collision.gameObject.tag == "Enemy")
         {
             StartCoroutine(Damage());
