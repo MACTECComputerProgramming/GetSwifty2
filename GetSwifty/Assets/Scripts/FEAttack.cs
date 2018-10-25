@@ -21,8 +21,7 @@ public class FEAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.DrawLine  (new Vector3(transform.position.x - playerRange, transform.position.y, transform.position.z),new Vector3 (transform.position.x + playerRange, transform.position.y, transform.position.z));
-
+        
         shotCounter -= Time.deltaTime;
 
         if (transform.position.x - player.transform.position.x > -2 

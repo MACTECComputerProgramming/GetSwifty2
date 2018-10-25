@@ -9,25 +9,29 @@ public class FlyingEnemyBehave : MonoBehaviour {
     public float playerRange;
     public LayerMask playerLayer;
     public bool playerInRange;
+    public int flyingHeight;
 
 	// Use this for initialization
 	void Start () {
         player = FindObjectOfType<CharacterContoller>();
 	}
-    //Kyler was here
+    
     // Update is called once per frame
     void Update () 
     {
+
+        //if the player is in the circle the moth will follow
         playerInRange = Physics2D.OverlapCircle(transform.position, playerRange, playerLayer);
 
         if (playerInRange)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position , player.transform.position, speed * Time.deltaTime);
         }
 	}
 
     void OnDrawGizmosSelected()
     {
+        
         Gizmos.DrawSphere(transform.position, playerRange);
     }
 
