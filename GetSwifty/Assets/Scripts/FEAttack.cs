@@ -24,8 +24,8 @@ public class FEAttack : MonoBehaviour {
         
         shotCounter -= Time.deltaTime;
 
-        if (transform.position.x - player.transform.position.x > -2 
-                &&transform.position.x - player.transform.position.x < 2
+        if (transform.position.y - player.transform.position.y > -2 
+                &&transform.position.y - player.transform.position.y < 2
                 && shotCounter < 0)
         {
             Instantiate(Bullet, launchPoint.position, launchPoint.rotation);
@@ -33,8 +33,8 @@ public class FEAttack : MonoBehaviour {
         }
 
 
-        if (transform.position.x - player.transform.position.x > -2
-                        && transform.position.x - player.transform.position.x < 2 && shotCounter < 0)
+        if (transform.position.y - player.transform.position.y > -2
+            && transform.position.y - player.transform.position.y < 2 && shotCounter < 0)
         {
             Instantiate(Bullet, launchPoint.position, launchPoint.rotation);
             shotCounter = waitBetweenShots;

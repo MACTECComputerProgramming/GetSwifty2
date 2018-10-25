@@ -18,14 +18,8 @@ public class CharacterHealth : MonoBehaviour {
 	void Start () {
         
         
-    }
-
-
-
-    
+    }    
     void Update() {
-        
-
         if (playerHealthCurrent <= 0)
         {
             SceneManager.LoadScene(4);
@@ -52,11 +46,6 @@ public class CharacterHealth : MonoBehaviour {
         }
 
     }
-    void OnTriggerExit(Collider other)
-    {
-        
-    }
-
     IEnumerator Damage()
     {
         playerHealthCurrent -= 25;
