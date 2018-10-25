@@ -25,14 +25,17 @@ public class FEAttack : MonoBehaviour {
 
         shotCounter -= Time.deltaTime;
 
-        if (/*transform.localScale.y < 0 &&*/ transform.position.x == player.transform.position.x && shotCounter < 0)
+        if (transform.position.x - player.transform.position.x > -2 
+                &&transform.position.x - player.transform.position.x < 2
+                && shotCounter < 0)
         {
             Instantiate(Bullet, launchPoint.position, launchPoint.rotation);
             shotCounter = waitBetweenShots;
         }
 
 
-if (/*transform.localScale.y > 0 &&*/ transform.position.x == player.transform.position.x && shotCounter < 0)
+        if (transform.position.x - player.transform.position.x > -2
+                        && transform.position.x - player.transform.position.x < 2 && shotCounter < 0)
         {
             Instantiate(Bullet, launchPoint.position, launchPoint.rotation);
             shotCounter = waitBetweenShots;

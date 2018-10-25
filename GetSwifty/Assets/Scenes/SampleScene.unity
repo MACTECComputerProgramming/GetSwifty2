@@ -31257,7 +31257,7 @@ GameObject:
   m_Layer: 0
   m_Name: DropPoint_Enemy
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -31268,7 +31268,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1295601735}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -0.85, z: 0}
+  m_LocalPosition: {x: -0.05, y: -0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1550767810}
@@ -37097,7 +37097,7 @@ MonoBehaviour:
   playerRange: 1
   player: {fileID: 140828932}
   launchPoint: {fileID: 1295601736}
-  waitBetweenShots: 1
+  waitBetweenShots: 0
 --- !u!114 &1550767805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37230,7 +37230,7 @@ Transform:
   m_Children:
   - {fileID: 1295601736}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1551334739
 GameObject:
