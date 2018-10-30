@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class HarambeAI : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public bool isGrounded;
+    public Transform groundCheck;
+    public float checkRadius;
+    public Rigidbody2D rb;
+    public LayerMask whatIsGround;
+
+
+
+
+
+    
+    void Start () {
 		
 	}
 	
-	// Update is called once per frame
+	
 	void Update () {
 		
 	}
