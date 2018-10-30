@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\FEAttack.cs" />
     <Compile Include="Assets\Scripts\FlyingEnemyBehave.cs" />
+    <Compile Include="Assets\Scripts\HarambeAI.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Pausing.cs" />
     <Compile Include="Assets\Scripts\ScoreScript.cs" />
