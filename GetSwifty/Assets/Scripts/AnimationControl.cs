@@ -10,7 +10,7 @@ public class AnimationControl : MonoBehaviour {
     public bool isGrounded; //Value to detect whether the player is on the ground
     public Transform groundCheck; //Empty object detecting layered ground
     public LayerMask whatIsGround; //Layer that is considered ground
-    public float checkRadius; 
+    public float checkRadius;
     private SpriteRenderer sr; //Renderer that gets adjusted
     public Animator an;
     public Rigidbody2D rb;
