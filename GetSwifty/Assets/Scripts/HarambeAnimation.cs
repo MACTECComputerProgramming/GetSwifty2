@@ -17,7 +17,7 @@ public class HarambeAnimation : MonoBehaviour {
 	}
 	
 	
-	void FixedUpdate () {
+	/*void FixedUpdate () {
         if (HarambeAI.HarambeValue == 0)
         {
             an.SetInteger("Action", 0);
@@ -26,5 +26,5 @@ public class HarambeAnimation : MonoBehaviour {
         {
             an.SetInteger("Action", 1);
         }
-	}
+	} */
 }

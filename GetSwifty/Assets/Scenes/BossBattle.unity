@@ -1971,7 +1971,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 958801289}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bf080e36122b894d801b536905a6d5a, type: 3}
   m_Name: 
@@ -1982,18 +1982,14 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 958801289}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ab738bf3174e30439fb2304ceb40be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGrounded: 0
-  groundCheck: {fileID: 842774162}
-  checkRadius: 0.5
+  idle: 0
+  action: 0
   rb: {fileID: 958801294}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!82 &958801292
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2450,6 +2446,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1074107518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1956893686628528, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+    type: 2}
+  m_PrefabInternal: {fileID: 1710328249}
+--- !u!60 &1074107530
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1074107518}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: b0c72f6b55f8d7444b51539fe8d0a715, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1, y: -1}
+      - {x: 1, y: -0.81}
+      - {x: 0.91999996, y: -0.71999997}
+      - {x: 0.66999996, y: -0.56}
+      - {x: 0.82, y: -0.53}
+      - {x: 0.93, y: -0.45}
+      - {x: 0.93, y: -0.08}
+      - {x: 0.9, y: -0.06}
+      - {x: 0.84999996, y: 0.089999996}
+      - {x: 0.71999997, y: 0.19999999}
+      - {x: 0.64, y: 0.17999999}
+      - {x: 0.64, y: 0.65999997}
+      - {x: 0.44, y: 0.88}
+      - {x: 0.31, y: 1}
+      - {x: -0.13, y: 1}
+      - {x: -0.26, y: 0.98999995}
+      - {x: -0.47, y: 0.82}
+      - {x: -0.56, y: 0.59999996}
+      - {x: -0.57, y: 0.21}
+      - {x: -0.72999996, y: 0.19}
+      - {x: -0.84, y: 0.089999996}
+      - {x: -0.93, y: -0.08}
+      - {x: -0.95, y: -0.42999998}
+      - {x: -0.82, y: -0.53999996}
+      - {x: -0.75, y: -0.66999996}
+      - {x: -0.91999996, y: -0.72999996}
+      - {x: -1, y: -0.81}
+      - {x: -1, y: -1}
+      - {x: -0.13, y: -1}
+      - {x: -0.099999994, y: -0.82}
+      - {x: 0.07, y: -0.82}
+      - {x: 0.12, y: -1}
+    - - {x: -0.5, y: -0.45}
+      - {x: -0.45999998, y: -0.45}
+      - {x: -0.45999998, y: -0.48}
+      - {x: -0.5, y: -0.48}
+    - - {x: 0.45, y: -0.45}
+      - {x: 0.5, y: -0.45}
+      - {x: 0.5, y: -0.48}
+      - {x: 0.45, y: -0.48}
 --- !u!1 &1131388444
 GameObject:
   m_ObjectHideFlags: 0
@@ -4487,6 +4552,11 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61329285240851818, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e2af71b64cb4334b8c84e482bbc7719, type: 2}
