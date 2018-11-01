@@ -3226,6 +3226,21 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1206955683}
   m_Script: {fileID: 11500000, guid: 17eaf3ea3373250489b7606582c77e52, type: 3}
+--- !u!95 &140828935 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95544332896286024, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+    type: 2}
+  m_PrefabInternal: {fileID: 1206955683}
+--- !u!50 &140828940 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 50475268680355212, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+    type: 2}
+  m_PrefabInternal: {fileID: 1206955683}
+--- !u!212 &140828941 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212691513432029912, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+    type: 2}
+  m_PrefabInternal: {fileID: 1206955683}
 --- !u!1 &145088044
 GameObject:
   m_ObjectHideFlags: 0
@@ -9452,6 +9467,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &390035609 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4382706113264564, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+    type: 2}
+  m_PrefabInternal: {fileID: 1206955683}
 --- !u!1 &390106351
 GameObject:
   m_ObjectHideFlags: 0
@@ -29704,6 +29724,36 @@ Prefab:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 632048247}
+    - target: {fileID: 114352735918997626, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+        type: 2}
+      propertyPath: whatIsGround.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114352735918997626, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+        type: 2}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 390035609}
+    - target: {fileID: 114352735918997626, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+        type: 2}
+      propertyPath: checkRadius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114352735918997626, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+        type: 2}
+      propertyPath: an
+      value: 
+      objectReference: {fileID: 140828935}
+    - target: {fileID: 114352735918997626, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+        type: 2}
+      propertyPath: sr
+      value: 
+      objectReference: {fileID: 140828941}
+    - target: {fileID: 114352735918997626, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+        type: 2}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 140828940}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e2af71b64cb4334b8c84e482bbc7719, type: 2}
   m_IsPrefabAsset: 0
