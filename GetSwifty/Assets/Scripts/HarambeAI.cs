@@ -11,7 +11,10 @@ public class HarambeAI : MonoBehaviour {
     public bool facingRight;
     
     public Rigidbody2D rb;
-    
+
+    public Transform blastPoint;
+    public GameObject blast;
+
     public static int HarambeValue;
     public System.Random rn;
     
@@ -26,13 +29,19 @@ public class HarambeAI : MonoBehaviour {
     }
 
 
-    private void BlastAttack()
+    IEnumerator BlastAttack()
     {
-        
-        
-            Debug.Log("blast");
-        
-        
+        inBlast = true;
+
+
+        Instantiate(blast, blastPoint.position, blastPoint.rotation);
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(blast, blastPoint.position, blastPoint.rotation);
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(blast, blastPoint.position, blastPoint.rotation);
+        yield return new WaitForSeconds(2);
+
+        inBlast = false;
     }
 
 
@@ -71,13 +80,13 @@ public class HarambeAI : MonoBehaviour {
     }
 
 
-
+    //Movement method
     private void Movement(int direction, int speed)
     {
         rb.velocity = new Vector2((speed * direction), rb.velocity.y);
     }
 
-
+    //Flip method
     private void FlipSprite()
     {
         Debug.Log("flip");
@@ -94,11 +103,14 @@ public class HarambeAI : MonoBehaviour {
             Debug.Log("action");
             if (action == 1)
             {
-                BlastAttack();
                 Debug.Log("Blast");
+                StartCoroutine(BlastAttack());
+                while (inBlast)
+                    yield return new WaitForSeconds(0.1f);
             }
             if (action == 0)
             {
+                Debug.Log("Rush");
                 StartCoroutine(RushAttack());
                 while (inRush)
                     yield return new WaitForSeconds(0.1f);
