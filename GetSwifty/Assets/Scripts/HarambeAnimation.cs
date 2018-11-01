@@ -6,14 +6,14 @@ public class HarambeAnimation : MonoBehaviour {
 
     private SpriteRenderer sr;
     private Animator an;
-    private Rigidbody2D rb;
+    
 
 
 
 	void Start () {
         sr = GetComponent<SpriteRenderer>();
         an = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        
 	}
 	
 	
