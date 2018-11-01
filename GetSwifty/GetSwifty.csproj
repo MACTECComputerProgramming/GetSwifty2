@@ -307,6 +307,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AnimationControl.cs" />
+    <Compile Include="Assets\Scripts\BossHealth_Slider.cs" />
     <Compile Include="Assets\Scripts\BulletBehave_Enemy.cs" />
     <Compile Include="Assets\Scripts\BulletBehavior.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />

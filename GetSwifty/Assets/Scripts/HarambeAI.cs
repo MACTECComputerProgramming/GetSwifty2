@@ -107,6 +107,10 @@ public class HarambeAI : MonoBehaviour {
         //Rush attack
         while(transform.position.x > -7)
         {
+            if (touchingPlayer)
+            {
+                break;
+            }
             Movement(-1, 10);
             yield return null;
         }
@@ -135,6 +139,7 @@ public class HarambeAI : MonoBehaviour {
         for (int i = 10; i > 0; i--)
         {
             action = rn.Next(0, 2);
+            HarambeValue = action;
             Debug.Log("action");
             if (action == 1)
             {
@@ -150,7 +155,7 @@ public class HarambeAI : MonoBehaviour {
                 while (inRush)
                     yield return new WaitForSeconds(0.1f);
             }
-            
+            HarambeValue = action;
             yield return new WaitForSeconds(0.5f);
             Debug.Log("yes");
         }

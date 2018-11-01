@@ -6,18 +6,18 @@ public class HarambeAnimation : MonoBehaviour {
 
     private SpriteRenderer sr;
     private Animator an;
-    private Rigidbody2D rb;
+    
 
 
 
 	void Start () {
         sr = GetComponent<SpriteRenderer>();
         an = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        
 	}
 	
 	
-	/*void FixedUpdate () {
+	void Update () {
         if (HarambeAI.HarambeValue == 0)
         {
             an.SetInteger("Action", 0);
@@ -26,5 +26,5 @@ public class HarambeAnimation : MonoBehaviour {
         {
             an.SetInteger("Action", 1);
         }
-	} */
+	} 
 }

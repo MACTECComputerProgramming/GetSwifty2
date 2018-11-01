@@ -12,6 +12,7 @@ public class CharacterHealth : MonoBehaviour {
     public Slider healthBar;
     public Scene winScene;
     public Scene loseScene;
+    public Scene BossBattle;
     
 
 	
@@ -41,8 +42,8 @@ public class CharacterHealth : MonoBehaviour {
         }
         if (collision.gameObject.tag.Equals("Flag"))
         {
-            SceneManager.LoadScene(3);
-            ScoreScript.scoreValue = 0;
+            SceneManager.LoadScene(5);
+            
         }
 
     }
@@ -53,7 +54,7 @@ public class CharacterHealth : MonoBehaviour {
         yield return new WaitForSeconds(2);
         StopCoroutine(Damage());
     }
-    float CalculateHealth()
+    public float CalculateHealth()
     {
         return playerHealthCurrent;
     }
