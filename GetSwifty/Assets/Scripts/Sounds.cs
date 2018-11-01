@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 
 public class Sounds : MonoBehaviour {
 
+    public AudioClip fire;
     public AudioClip jump;
     public AudioClip hurt;
     public AudioClip banana;
@@ -22,6 +23,12 @@ public class Sounds : MonoBehaviour {
         {
             source.PlayOneShot(jump);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            source.PlayOneShot(fire);
+        }
+
 
 	}
 
