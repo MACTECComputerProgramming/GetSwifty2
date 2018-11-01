@@ -20,11 +20,13 @@ public class HarambeAI : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         rn = new System.Random();
         Debug.Log("start");
+        GoGo();
     }
 	
+    
 	
 	void Update () {
-        Debug.Log("update start");
+      /*  Debug.Log("update start");
         action = rn.Next(0, 2);
         
         if (idle == true)
@@ -44,30 +46,19 @@ public class HarambeAI : MonoBehaviour {
         {
             Debug.Log("idle");
         }
-
-        Debug.Log("Update end");
+        */       Debug.Log("Update end");
 	}
-
-    void FixedUpdate()
-    {
-        
-    }
-
-
+    
 
 
     private void BlastAttack()
     {
         idle = false;
         
-        
             Debug.Log("blast");
-        
         
         idle = true;
     }
-
-
 
 
     private void RushAttack()
@@ -81,7 +72,7 @@ public class HarambeAI : MonoBehaviour {
                 FlipSprite();
             }
 
-            float a = 7 - transform.position.x;
+            float a = 7 ;
             for (float i = a; i > 0;i--)
             {
                 Movement(1,4);
@@ -95,7 +86,7 @@ public class HarambeAI : MonoBehaviour {
         //Rush attack
         for(int i = 14; i > 0 ; i--)
         {
-            Movement(-1, 4);
+            Movement(-1, 2);
         }
         Debug.Log("rush");
         idle = true;
@@ -121,7 +112,35 @@ public class HarambeAI : MonoBehaviour {
         }
     }
 
+    private void GoGo()
+    {
 
+        for (int i = 60; i > 0 ; i--)
+        {
+            action = rn.Next(0, 2);
+            if (idle == true)
+            {
+                Debug.Log("action");
+                if (action == 1)
+                {
+                    BlastAttack();
+                    Debug.Log("Blast");
+                }
+                if (action == 0)
+                {
+                    RushAttack();
+                }
+            }
+            else
+            {
+                Debug.Log("idle");
+            }
+
+        }
+
+
+
+    }
 
 
 
