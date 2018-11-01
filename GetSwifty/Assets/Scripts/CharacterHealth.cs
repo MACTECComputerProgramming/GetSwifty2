@@ -54,7 +54,7 @@ public class CharacterHealth : MonoBehaviour {
         yield return new WaitForSeconds(2);
         StopCoroutine(Damage());
     }
-    float CalculateHealth()
+    public float CalculateHealth()
     {
         return playerHealthCurrent;
     }
