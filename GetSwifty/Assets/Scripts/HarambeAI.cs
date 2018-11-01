@@ -9,12 +9,16 @@ public class HarambeAI : MonoBehaviour {
     public bool inRush;
     public bool inBlast;
     public bool facingRight;
-    
+    public bool touchingPlayer;
+
     public Rigidbody2D rb;
 
-    public Transform blastPoint;
+    public Transform blastPoint1;
+    public Transform blastPoint2;
+    public Transform blastPoint3;
     public GameObject blast;
 
+    public GameObject player;
     public static int HarambeValue;
     public System.Random rn;
     
@@ -22,24 +26,55 @@ public class HarambeAI : MonoBehaviour {
         inRush = false;
         inBlast = false;
         facingRight = false;
+        touchingPlayer = false;
         rb = GetComponent<Rigidbody2D>();
         rn = new System.Random();
         Debug.Log("start");
         StartCoroutine(GoGo());
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            touchingPlayer = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            touchingPlayer = false;
+        }
+    }
+
+
 
     IEnumerator BlastAttack()
     {
         inBlast = true;
 
-
-        Instantiate(blast, blastPoint.position, blastPoint.rotation);
+        if (player.transform.position.x - transform.position.x > 0 && !facingRight)
+        {
+            FlipSprite();
+        }
+        if (player.transform.position.x - transform.position.x < 0 && facingRight)
+        {
+            FlipSprite();
+        }
+        Instantiate(blast, blastPoint1.position, blastPoint1.rotation);
         yield return new WaitForSeconds(0.5f);
-        Instantiate(blast, blastPoint.position, blastPoint.rotation);
+        Instantiate(blast, blastPoint2.position, blastPoint2.rotation);
         yield return new WaitForSeconds(0.5f);
-        Instantiate(blast, blastPoint.position, blastPoint.rotation);
+        Instantiate(blast, blastPoint3.position, blastPoint3.rotation);
         yield return new WaitForSeconds(2);
+
+
+
+
+
+
 
         inBlast = false;
     }
@@ -67,11 +102,15 @@ public class HarambeAI : MonoBehaviour {
             {
                 FlipSprite();
             }
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.25f);
         }
         //Rush attack
         while(transform.position.x > -7)
         {
+            if (touchingPlayer)
+            {
+                break;
+            }
             Movement(-1, 10);
             yield return null;
         }
@@ -97,9 +136,10 @@ public class HarambeAI : MonoBehaviour {
 
     IEnumerator GoGo()
     {
-        for (int i = 3; i > 0; i--)
+        for (int i = 10; i > 0; i--)
         {
             action = rn.Next(0, 2);
+            HarambeValue = action;
             Debug.Log("action");
             if (action == 1)
             {
@@ -115,8 +155,8 @@ public class HarambeAI : MonoBehaviour {
                 while (inRush)
                     yield return new WaitForSeconds(0.1f);
             }
-            
-            yield return new WaitForSeconds(2);
+            HarambeValue = action;
+            yield return new WaitForSeconds(0.5f);
             Debug.Log("yes");
         }
     }
