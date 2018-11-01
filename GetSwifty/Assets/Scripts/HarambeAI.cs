@@ -107,6 +107,10 @@ public class HarambeAI : MonoBehaviour {
         //Rush attack
         while(transform.position.x > -7)
         {
+            if (touchingPlayer)
+            {
+                break;
+            }
             Movement(-1, 10);
             yield return null;
         }
