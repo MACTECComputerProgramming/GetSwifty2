@@ -2876,7 +2876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossHealthMax: 500
   bossHealthCurrent: 500
-  healthBar_Boss: {fileID: 0}
+  healthBar_Boss: {fileID: 504725785}
 --- !u!1 &972614609
 GameObject:
   m_ObjectHideFlags: 0
@@ -5784,6 +5784,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114066296003095502, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+        type: 2}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1065282934}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e2af71b64cb4334b8c84e482bbc7719, type: 2}
   m_IsPrefabAsset: 0
