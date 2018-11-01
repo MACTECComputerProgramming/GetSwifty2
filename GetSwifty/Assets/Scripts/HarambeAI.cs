@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class HarambeAI : MonoBehaviour {
 
-    public bool idle;
     public int action;
-    
-    
+    public bool inRush;
+    public bool inBlast;
+    public bool facingRight;
     
     public Rigidbody2D rb;
     
@@ -16,80 +16,58 @@ public class HarambeAI : MonoBehaviour {
     public System.Random rn;
     
     void Start () {
-        idle = true;
+        inRush = false;
+        inBlast = false;
+        facingRight = false;
         rb = GetComponent<Rigidbody2D>();
         rn = new System.Random();
         Debug.Log("start");
-        GoGo();
+        StartCoroutine(GoGo());
     }
-	
-    
-	
-	void Update () {
-      /*  Debug.Log("update start");
-        action = rn.Next(0, 2);
-        
-        if (idle == true)
-        {
-            Debug.Log("action");
-            if (action == 1)
-            {
-                BlastAttack();
-                Debug.Log("Blast");
-            }
-            if (action == 0)
-            {
-                RushAttack();
-            }
-        }
-        else
-        {
-            Debug.Log("idle");
-        }
-        */       Debug.Log("Update end");
-	}
-    
 
 
     private void BlastAttack()
     {
-        idle = false;
+        
         
             Debug.Log("blast");
         
-        idle = true;
+        
     }
 
 
-    private void RushAttack()
+    IEnumerator RushAttack()
     {
-        idle = false;
+        inRush = true;
         //Get into position
         if (transform.position.x < 7)
         {
-            if (transform.rotation.y == 180)
+            //flips to right
+            if (!facingRight)
             {
                 FlipSprite();
             }
-
-            float a = 7 ;
-            for (float i = a; i > 0;i--)
+            //move to left to prep for rush            
+            while (transform.position.x < 7)
             {
                 Movement(1,4);
+                yield return null;
             }
-
-            if (transform.rotation.y == 0)
+            //flips to left
+            if (facingRight)
             {
                 FlipSprite();
             }
+            yield return new WaitForSeconds(1);
         }
         //Rush attack
-        for(int i = 14; i > 0 ; i--)
+        while(transform.position.x > -7)
         {
-            Movement(-1, 2);
+            Movement(-1, 10);
+            yield return null;
         }
-        Debug.Log("rush");
-        idle = true;
+        yield return new WaitForSeconds(1);
+        inRush = false;
     }
 
 
@@ -102,47 +80,34 @@ public class HarambeAI : MonoBehaviour {
 
     private void FlipSprite()
     {
-        if (transform.rotation.y == 180)
-        {
-            transform.rotation = new Quaternion(transform.rotation.x, 0, transform.rotation.z, transform.rotation.w);
-        }
-        else
-        {
-            transform.rotation = new Quaternion(transform.rotation.x, 180, transform.rotation.z, transform.rotation.w);
-        }
+        Debug.Log("flip");
+        facingRight = !facingRight;
+        transform.Rotate(0, 180, 0);
     }
 
-    private void GoGo()
-    {
 
-        for (int i = 60; i > 0 ; i--)
+    IEnumerator GoGo()
+    {
+        for (int i = 3; i > 0; i--)
         {
             action = rn.Next(0, 2);
-            if (idle == true)
+            Debug.Log("action");
+            if (action == 1)
             {
-                Debug.Log("action");
-                if (action == 1)
-                {
-                    BlastAttack();
-                    Debug.Log("Blast");
-                }
-                if (action == 0)
-                {
-                    RushAttack();
-                }
+                BlastAttack();
+                Debug.Log("Blast");
             }
-            else
+            if (action == 0)
             {
-                Debug.Log("idle");
+                StartCoroutine(RushAttack());
+                while (inRush)
+                    yield return new WaitForSeconds(0.1f);
             }
-
+            
+            yield return new WaitForSeconds(2);
+            Debug.Log("yes");
         }
-
-
-
     }
-
-
 
 
 
