@@ -21,11 +21,10 @@ public class EnemyHealth : MonoBehaviour
     {
         if (col.gameObject.tag.Equals("Bullet"))
         {
-            
             enemyHealth -= 25;
         }
     }
-    //Kyler was here
+    
 
 
 }
