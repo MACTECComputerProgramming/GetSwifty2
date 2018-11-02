@@ -21,6 +21,9 @@ public class HarambeAI : MonoBehaviour {
     public GameObject player;
     public static int HarambeValue;
     public System.Random rn;
+
+    public AudioClip grunt;
+    public AudioSource au;
     
     void Start () {
         inRush = false;
@@ -71,10 +74,7 @@ public class HarambeAI : MonoBehaviour {
         yield return new WaitForSeconds(2);
 
 
-
-
-
-
+        
 
         inBlast = false;
     }
@@ -105,6 +105,7 @@ public class HarambeAI : MonoBehaviour {
             yield return new WaitForSeconds(0.25f);
         }
         //Rush attack
+        au.PlayOneShot(grunt);
         while(transform.position.x > -7)
         {
             if (touchingPlayer)

@@ -2609,6 +2609,8 @@ MonoBehaviour:
   blastPoint3: {fileID: 1101018417}
   blast: {fileID: 1002935099613832, guid: b391a2cc4365de844ba37f65803c67cf, type: 2}
   player: {fileID: 1074107518}
+  grunt: {fileID: 8300000, guid: bc02d232d804ba84cb532000886717bb, type: 3}
+  au: {fileID: 958801292}
 --- !u!82 &958801292
 AudioSource:
   m_ObjectHideFlags: 0
