@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class HarambeAnimation : MonoBehaviour {
 
-    private SpriteRenderer sr;
+
     private Animator an;
     
 
 
 
 	void Start () {
-        sr = GetComponent<SpriteRenderer>();
         an = GetComponent<Animator>();
         
 	}

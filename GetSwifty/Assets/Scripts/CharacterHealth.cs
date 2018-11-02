@@ -33,6 +33,12 @@ public class CharacterHealth : MonoBehaviour {
         }
 	}
 
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
+
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
@@ -60,3 +66,7 @@ public class CharacterHealth : MonoBehaviour {
     }
 
 }
+
+
+
+// www.youtube.com/camnok
