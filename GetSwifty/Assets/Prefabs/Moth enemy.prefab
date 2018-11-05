@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114450655672392236}
   - component: {fileID: 114404363085277666}
   - component: {fileID: 114489137489583974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Moth enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4445841949171122}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DropPoint_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

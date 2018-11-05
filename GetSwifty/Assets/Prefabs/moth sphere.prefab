@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50420096145756996}
   - component: {fileID: 58944236921608580}
   - component: {fileID: 114817120457375040}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: moth sphere
   m_TagString: Enemy
   m_Icon: {fileID: 0}

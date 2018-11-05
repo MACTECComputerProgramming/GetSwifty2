@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50416727200446722}
   - component: {fileID: 114143221464911142}
   - component: {fileID: 58691441296310444}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HarambeBlast
   m_TagString: Enemy
   m_Icon: {fileID: 0}

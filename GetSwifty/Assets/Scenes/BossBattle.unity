@@ -190,7 +190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 67022042}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Blast Point 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1595,7 +1595,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 606899171}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Blast Point 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1609,7 +1609,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 606899170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.25, y: -0.25, z: 0}
+  m_LocalPosition: {x: 1.25, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 958801296}
@@ -2239,7 +2239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 842774162}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2569,7 +2569,7 @@ GameObject:
   - component: {fileID: 958801290}
   - component: {fileID: 958801297}
   - component: {fileID: 958801298}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Harambe
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3378,7 +3378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1101018417}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Blast Point 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5791,6 +5791,16 @@ Prefab:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1065282934}
+    - target: {fileID: 114066296003095502, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+        type: 2}
+      propertyPath: invincibilityTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114066296003095502, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+        type: 2}
+      propertyPath: invinc
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e2af71b64cb4334b8c84e482bbc7719, type: 2}
   m_IsPrefabAsset: 0

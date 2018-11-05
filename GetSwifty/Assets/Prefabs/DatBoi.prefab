@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50816831384427842}
   - component: {fileID: 114229971089369524}
   - component: {fileID: 61639726301753666}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DatBoi
   m_TagString: Enemy
   m_Icon: {fileID: 0}
