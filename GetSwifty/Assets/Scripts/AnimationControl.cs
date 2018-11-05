@@ -1,37 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Timeline;
-
 
 public class AnimationControl : MonoBehaviour {
 
-    public bool isMoving;
-    public bool isGrounded; //Value to detect whether the player is on the ground
+    public bool isMoving; //Value to display if the player is moving
+    public bool isGrounded; //Value to display if the player is on the ground
     public Transform groundCheck; //Empty object detecting layered ground
     public LayerMask whatIsGround; //Layer that is considered ground
-    public float checkRadius;
+    public float checkRadius; //Used to detect if the player is touching the ground
     public SpriteRenderer sr; //Renderer that gets adjusted
-    public Animator an;
-    public Rigidbody2D rb;
-    public float speed;
+    public Animator an; //Animator whose parameters get changed
 
     void Start()
     { 
+        //Assigns the renderer and the animator
         sr = GetComponent<SpriteRenderer>();
-
         an = GetComponent<Animator>();
-
-        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        
+        //Uses a circle, a transform, and a layer to check if the player is touching the ground
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-        
 
+        //Detects if the player is touching the ground
         if (isGrounded)
         {
             an.SetBool("Grounded", true);
@@ -40,6 +33,8 @@ public class AnimationControl : MonoBehaviour {
         {
             an.SetBool("Grounded", false);
         }
+
+        //Detects if the player is pressing the keys and therefore moving
         if (Input.GetKey(KeyCode.A))
         {
             an.SetBool("Moving", true);
@@ -48,14 +43,11 @@ public class AnimationControl : MonoBehaviour {
         {
             an.SetBool("Moving", true);
         }
+
+        //Detects if the player is not pressing any movement keys
         if (!(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
         {
             an.SetBool("Moving", false);
         }
-
-
-        //Kyler was here
     }
-
-
 }

@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class FlyingEnemyBehave : MonoBehaviour {
 
-    private CharacterContoller player;
-    public float speed;
-    public float playerRange;
-    public LayerMask playerLayer;
+    private CharacterContoller player; //Player to shoot at
+    public float speed; //Flying enemy speed
+    public float playerRange; //Used to check the player's position
+    public LayerMask playerLayer; //
     public bool playerInRange;
 
-	// Use this for initialization
-	void Start () {
-        
+	//Sets the player to reference it
+	void Start ()
+    {
         player = FindObjectOfType<CharacterContoller>();
-
 	}
     
     // Update is called once per frame

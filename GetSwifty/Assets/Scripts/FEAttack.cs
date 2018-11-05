@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FEAttack : MonoBehaviour {
-    //public Transform firePoint;
+    
+
     public GameObject Bullet;
     public float playerRange;
     public CharacterContoller player;
@@ -11,19 +12,20 @@ public class FEAttack : MonoBehaviour {
     public float waitBetweenShots;
     private float shotCounter;
 
-	// Use this for initialization
-	void Start () {
+	//Finds the player and sets the shot counter
+	void Start ()
+    {
 		player = FindObjectOfType<CharacterContoller>();
-
         shotCounter = waitBetweenShots;
-
 	}
 	
-	// Update is called once per frame
+	
 	void Update () {
         
+        //Sets the counter
         shotCounter -= Time.deltaTime;
 
+        //Shoot bullets
         if (transform.position.y - player.transform.position.y > -2 
                 &&transform.position.y - player.transform.position.y < 2
                 && shotCounter < 0)

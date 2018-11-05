@@ -65,7 +65,8 @@ public class EnemyAI : MonoBehaviour {
             Destroy(gameObject);
         }
     }
-    //Kyler was here
+    
+
     //Flips the enemy if needed
     private void Flip()
     {
