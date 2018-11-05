@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletBehave_Enemy : MonoBehaviour {
-
     
-    public Rigidbody2D rBody;
-    public GameObject Bullet;
-    public int destroyOverTime;
-    public float bulletSpeed;
+    public Rigidbody2D rBody; //Enemy bullet's rigidbody
+    public GameObject Bullet; //Enemy bullet's prefab
+    public int destroyOverTime; //Time bullet exists before being destroyed
+    public float bulletSpeed; //Enemy bullet's speed
 
-	// Use this for initialization
+    //Set's the bullet's velocity as soon as it's created
 	void Start () {
         rBody.velocity = transform.right * bulletSpeed;
 	}
-	// Update is called once per frame
+	
+
     void Update()
     {
+        //Destroys the bullet over time
         Destroy(Bullet, destroyOverTime);
     }
-    // Update is called once per frame
     
+    //Destroys the bullet if it touches an enemy
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         if(!(hitInfo.gameObject.tag.Equals("Enemy"))) {

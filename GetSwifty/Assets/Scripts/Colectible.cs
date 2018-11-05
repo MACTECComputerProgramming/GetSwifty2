@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Colectible : MonoBehaviour {
-    //Kyler was here
+    
     //When triggered checks the collider for the player tag and if true adds ten to the score and destroys itself
     void OnTriggerEnter2D(Collider2D col)
     {

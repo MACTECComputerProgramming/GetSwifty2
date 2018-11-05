@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
 
-    //Object the camera will follow
-    public GameObject player;
-    //Camera's location in relation to the player
-    private Vector3 offset;
+    public GameObject player; //Object the camera will follow
+    private Vector3 offset; //Camera's location in relation to the player
 
-	//Initializes the camera's position based on editor position and player position
-	void Start () {
+
+    //Initializes the camera's position based on editor position and player position
+    void Start ()
+    {
         offset = transform.position - player.transform.position;
 	}
 
-    //Kyler was here
+    
     //Resets the camera's location variable and sets its location to the new variable
-    void LateUpdate () {
+    void LateUpdate ()
+    {
         offset.Set(player.transform.position.x, 1, transform.position.z - player.transform.position.z);
         transform.position = offset;
 	}
