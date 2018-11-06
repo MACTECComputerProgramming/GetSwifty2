@@ -68,7 +68,7 @@ public class CharacterHealth : MonoBehaviour {
         invinc = true;
         c.a = 0.5f;
         rend.material.color = c;
-        
+        Physics2D.IgnoreLayerCollision(9, 10, true);
         playerHealthCurrent -= 25;
         healthBar.value = CalculateHealth();
         yield return new WaitForSeconds(invincibilityTime);

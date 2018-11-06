@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 15025778}
   - component: {fileID: 15025777}
   - component: {fileID: 15025776}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy01 (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3633,7 +3633,7 @@ GameObject:
   - component: {fileID: 153179624}
   - component: {fileID: 153179623}
   - component: {fileID: 153179622}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy01 (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -16167,7 +16167,7 @@ GameObject:
   - component: {fileID: 593039223}
   - component: {fileID: 593039222}
   - component: {fileID: 593039221}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy01 (3)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -16579,7 +16579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 606999394}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16600,6 +16600,7 @@ Transform:
   - {fileID: 153179621}
   - {fileID: 15025775}
   - {fileID: 593039220}
+  - {fileID: 1550767810}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19005,7 +19006,7 @@ Transform:
   - {fileID: 296381372}
   - {fileID: 62835234}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &730278007
 GameObject:
@@ -30298,6 +30299,11 @@ Prefab:
       propertyPath: fire
       value: 
       objectReference: {fileID: 8300000, guid: e7c059478b6847c4ab6a88666ebd4d04, type: 3}
+    - target: {fileID: 114066296003095502, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+        type: 2}
+      propertyPath: invincibilityTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e2af71b64cb4334b8c84e482bbc7719, type: 2}
   m_IsPrefabAsset: 0
@@ -37460,8 +37466,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e14d81d19e4fc4aa34b91e27c8e047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  playerRange: 100
+  speed: 3
+  playerRange: 25
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -37575,13 +37581,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1550767803}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.55, y: 4.4, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalPosition: {x: -119.2, y: 7.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 4}
   m_Children:
   - {fileID: 1295601736}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 606999394}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1551334739
 GameObject:
@@ -44542,13 +44548,13 @@ GameObject:
   - component: {fileID: 1839095787}
   - component: {fileID: 1839095788}
   - component: {fileID: 1839095793}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1839095787
 MonoBehaviour:
   m_ObjectHideFlags: 0

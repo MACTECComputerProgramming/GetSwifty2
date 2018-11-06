@@ -18,7 +18,7 @@ public class BossHealth_Slider : MonoBehaviour {
         //Detects when the boss dies and adds score and sends you to the win screen
         if(bossHealthCurrent <= 0){
             Destroy(gameObject);
-            ScoreScript.scoreValue += 500;
+            ScoreScript.scoreValue = 0;
             SceneManager.LoadScene(3);
         }
 	}

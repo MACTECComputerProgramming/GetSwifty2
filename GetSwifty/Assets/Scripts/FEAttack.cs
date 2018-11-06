@@ -21,6 +21,11 @@ public class FEAttack : MonoBehaviour {
 	
 	
 	void Update () {
+
+        if (player.transform.position.x - transform.position.x < 0)
+        {
+            transform.Rotate(0f, -180f, 0f);
+        }
         
         //Sets the counter
         shotCounter -= Time.deltaTime;
@@ -35,8 +40,9 @@ public class FEAttack : MonoBehaviour {
         }
 
 
-        if (transform.position.y - player.transform.position.y > -2
-            && transform.position.y - player.transform.position.y < 2 && shotCounter < 0)
+        if (transform.position.y + player.transform.position.y > 2
+            && transform.position.y + player.transform.position.y < -2 
+            && shotCounter < 0)
         {
             Instantiate(Bullet, launchPoint.position, launchPoint.rotation);
             shotCounter = waitBetweenShots;
