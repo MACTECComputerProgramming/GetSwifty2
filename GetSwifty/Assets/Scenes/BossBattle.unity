@@ -5801,6 +5801,11 @@ Prefab:
       propertyPath: invinc
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114616280140322066, guid: 7e2af71b64cb4334b8c84e482bbc7719,
+        type: 2}
+      propertyPath: fire
+      value: 
+      objectReference: {fileID: 8300000, guid: e7c059478b6847c4ab6a88666ebd4d04, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e2af71b64cb4334b8c84e482bbc7719, type: 2}
   m_IsPrefabAsset: 0
