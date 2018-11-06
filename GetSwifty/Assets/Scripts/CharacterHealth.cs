@@ -86,5 +86,3 @@ public class CharacterHealth : MonoBehaviour {
 }
 
 
-
-// www.youtube.com/camnok

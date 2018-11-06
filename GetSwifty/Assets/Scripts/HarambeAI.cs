@@ -32,6 +32,7 @@ public class HarambeAI : MonoBehaviour {
         touchingPlayer = false;
         rb = GetComponent<Rigidbody2D>();
         rn = new System.Random();
+        au = GetComponent<AudioSource>();
         Debug.Log("start");
         StartCoroutine(GoGo());
     }
@@ -137,7 +138,7 @@ public class HarambeAI : MonoBehaviour {
 
     IEnumerator GoGo()
     {
-        for (int i = 10; i > 0; i--)
+        for (int i = 1000; i > 0; i--)
         {
             action = rn.Next(0, 2);
             HarambeValue = action;
