@@ -23,6 +23,7 @@ public class HarambeAI : MonoBehaviour {
     public System.Random rn;
 
     public AudioClip grunt;
+    public AudioClip fireball;
     public AudioSource au;
     
     void Start () {
@@ -67,10 +68,13 @@ public class HarambeAI : MonoBehaviour {
         {
             FlipSprite();
         }
+        au.PlayOneShot(fireball);
         Instantiate(blast, blastPoint1.position, blastPoint1.rotation);
         yield return new WaitForSeconds(0.5f);
+        au.PlayOneShot(fireball);
         Instantiate(blast, blastPoint2.position, blastPoint2.rotation);
         yield return new WaitForSeconds(0.5f);
+        au.PlayOneShot(fireball);
         Instantiate(blast, blastPoint3.position, blastPoint3.rotation);
         yield return new WaitForSeconds(2);
 

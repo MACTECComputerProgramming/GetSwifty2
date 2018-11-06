@@ -2610,6 +2610,7 @@ MonoBehaviour:
   blast: {fileID: 1002935099613832, guid: b391a2cc4365de844ba37f65803c67cf, type: 2}
   player: {fileID: 1074107518}
   grunt: {fileID: 8300000, guid: bc02d232d804ba84cb532000886717bb, type: 3}
+  fireball: {fileID: 8300000, guid: d63b3c5b32601f540ae3cc376b34b6d6, type: 3}
   au: {fileID: 958801292}
 --- !u!82 &958801292
 AudioSource:
