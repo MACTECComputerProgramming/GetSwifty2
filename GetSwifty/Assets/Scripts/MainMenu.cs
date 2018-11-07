@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 
     //Used by buttons to progress the scenes once
-	public void PlayGame(){
+	public void PlayGame()
+    {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
@@ -15,5 +16,11 @@ public class MainMenu : MonoBehaviour {
     {
         SceneManager.LoadScene(2);
     }
-    //Kyler was here
+    
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+
 }
