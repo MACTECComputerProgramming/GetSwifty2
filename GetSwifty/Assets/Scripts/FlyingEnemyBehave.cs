@@ -24,10 +24,10 @@ public class FlyingEnemyBehave : MonoBehaviour {
         {
             transform.Rotate(0f, 0f, 0f);
         }
-        /*if (player.transform.position.x - transform.position.x < 0)
+        if (player.transform.position.x - transform.position.x < 0)
         {
             transform.Rotate(0f, -180f, 0f);
-        }*/
+        }
 
         //if the player is in the circle the moth will follow
         playerInRange = Physics2D.OverlapCircle(transform.position, playerRange, playerLayer);

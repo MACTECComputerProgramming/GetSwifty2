@@ -1361,9 +1361,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1015524615}
   m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 500
+  m_MaxValue: 1000
   m_WholeNumbers: 1
-  m_Value: 500
+  m_Value: 1000
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2733,7 +2733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab738bf3174e30439fb2304ceb40be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action: 1000
+  action: 2147483647
   inRush: 0
   inBlast: 0
   facingRight: 0
@@ -3012,8 +3012,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f126293c37937d4f90c0a7360bd2e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossHealthMax: 500
-  bossHealthCurrent: 500
+  bossHealthMax: 1000
+  bossHealthCurrent: 1000
   healthBar_Boss: {fileID: 504725785}
 --- !u!1 &972614609
 GameObject:
